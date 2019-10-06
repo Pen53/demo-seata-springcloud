@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sly.seata.storage.mapper.StorageinfoMapper">
+	<!-- 新增 -->
+	<insert id="insert" parameterType="Storageinfo">
+		INSERT INTO `BUSINESS_STORAGE2`(storage2Id,storage2Name,storage2Count,logic2Del,remark2)
+		VALUES(#{storage2Id},#{storage2Name},#{storage2Count},#{logic2Del},#{remark2})
+	</insert>
+	<select id="selectLog" resultType="map">
+		select * from undo_log
+	</select>
+	<select id="selectBranchTable" resultType="map">
+		select * from branch_table
+	</select>
+	<select id="selectGlobalTable" resultType="map">
+		select * from global_table
+	</select>
+	<select id="selectLockTable" resultType="map">
+		select * from lock_table
+	</select>
+</mapper>

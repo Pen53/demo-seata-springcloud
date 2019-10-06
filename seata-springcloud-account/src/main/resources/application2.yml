@@ -1,0 +1,43 @@
+#========================================server config=====================================
+server:
+  port: 9100
+#========================================spring config=====================================
+spring:
+  application:
+    name: seata-springcloud-account
+  devtools:
+    restart:
+      enabled: false
+#========================================MySQL config=====================================
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://localhost:3306/fescardb?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    #url: jdbc:mysql://localhost:3306/seata?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    #url: jdbc:mysql://localhost:3306/seata-account-db?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://10.14.8.232:3306/baojun_app?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    #password: andy123L
+    password: Sgmw@5050
+#========================================mybatis config=====================================
+mybatis:
+  type-aliases-package: com.sly.seata.common.model
+  mapper-locations: classpath:mapper/*.xml
+#========================================feign config=====================================
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ReadTimeout: 120000 #处理超时时间 默认5秒
+  ConnectTimeout: 120000 #连接超时时间 默认2秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 120000 #断路切换超时
+#========================================eureka config=====================================
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
