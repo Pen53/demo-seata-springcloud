@@ -1,3 +1,4 @@
+dev modify
 CREATE TABLE `BUSINESS_ACCOUNT` (
   `accountId` VARCHAR(32) NOT NULL COMMENT '主键uuid',
   `amount` DECIMAL(18,6) DEFAULT NULL COMMENT '金额',

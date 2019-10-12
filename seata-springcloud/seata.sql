@@ -1,3 +1,4 @@
+dev modify
 -- the table to store lock data
 DROP TABLE IF EXISTS `lock_table`;
 CREATE TABLE `lock_table` (
