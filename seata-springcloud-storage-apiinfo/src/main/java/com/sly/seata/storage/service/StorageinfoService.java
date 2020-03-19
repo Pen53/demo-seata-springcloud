@@ -13,7 +13,7 @@ import com.sly.seata.storage.service.hystrix.StorageinfoServiceHystrixImpl;
 /**
  * Storageinfo feign客户端
  * 
- * @author sly
+ * @author sly modify
  * @time 2019年6月12日
  */
 @FeignClient(name = "seata-springcloud-storageinfo", fallback = StorageinfoServiceHystrixImpl.class)
